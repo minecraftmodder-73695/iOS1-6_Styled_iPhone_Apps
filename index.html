@@ -6,7 +6,29 @@
 <title>iOS 1-6 Styled iPhone Apps</title>
 <style>
   body { font-family: "Helvetica Neue", Helvetica; max-width: 700px; margin: 0 auto; padding: 20px; line-height: 1.4; background: #D3D8E1 }
-  .app { display: flex; gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid #ccc }
+
+  .app {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 0.8em;
+    border: silver solid 1px;
+    border-top-width: 0;
+    background: white;
+  }
+  .app:first-of-type {
+    border-top-width: 1px;
+    border-radius: 0.6em 0.6em 0 0;
+  }
+  .app:last-of-type {
+    border-radius: 0 0 0.6em 0.6em;
+    box-shadow: 0 1px hsla(0, 0%, 100%, 0.8);
+  }
+  .app:only-of-type {
+    border-radius: 0.6em;
+  }
+
   .app img { width: 80px; height: 80px; border-radius: 18px }
   h2, p { margin: 0 }
   .dev { color: #666; font-size: .9rem }
