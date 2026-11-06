@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apps</title>
+<style>
+  body { font-family: "Helvetica Neue", Helvetica; max-width: 700px; margin: 0 auto; padding: 20px; line-height: 1.4 }
+  .app { display: flex; gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid #ccc }
+  .app img { width: 80px; height: 80px; border-radius: 18px }
+  h2, p { margin: 0 }
+  .dev { color: #666; font-size: .9rem }
+</style>
+</head>
+<body>
+<h1>Apps</h1>
+<main id="apps">Loading…</main>
+<script>
+const $ = document.getElementById("apps");
+
+fetch("assets/apps.txt")
+  .then(r => r.ok ? r.text() : Promise.reject(r.status))
+  .then(text => {
+    $.innerHTML = "";
+    for (const [, , body] of text.matchAll(/(\w+)\s*\{([^}]*)\}/g)) {
+      const a = Object.fromEntries([...body.matchAll(/(\w+)\s*:\s*"([^"]*)"/g)].map(m => [m[1], m[2]]));
+      const div = document.createElement("div");
+      div.className = "app";
+      div.innerHTML = `<img alt=""><div><h2><a></a></h2><p class="dev"></p><p class="desc"></p></div>`;
+      div.querySelector("img").src = "assets/" + a.icon;
+      div.querySelector("a").href = a.link;
+      div.querySelector("a").textContent = a.name;
+      div.querySelector(".dev").textContent = a.dev;
+      div.querySelector(".desc").textContent = a.desc;
+      $.append(div);
+    }
+  })
+  .catch(e => $.textContent = `Couldn't load assets/apps.txt (${e}). Run a local server, e.g. python3 -m http.server`);
+</script>
+</body>
+</html>
