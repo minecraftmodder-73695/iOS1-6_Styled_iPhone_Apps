@@ -42,6 +42,13 @@
   h2, p { margin: 0 }
   .dev { color: #666; font-size: .9rem }
   a { color: #000; text-decoration: none; }
+  a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+  .app:active { background: #e8e8e8; }
 </style>
 </head>
 <body>
