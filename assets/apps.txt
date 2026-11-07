@@ -1,28 +1,32 @@
 app1 {
 	name: "Medley Music Player";
-	dev: "And a Dinosaur";
-	desc: "Medley is a music player that looks like the pre-iOS 6 Music app.";
-	link: "https://apps.apple.com/app/medley-music-player/id1643761346";
+	category: "Music"
 	icon: "medley.webp";
+	price: "$2.99"
+	platform: "ios"
+	link: "https://apps.apple.com/app/medley-music-player/id1643761346";
 }
 app2 {
 	name: "Papertone";
-	dev: "YUSUF SAHAN TARHAN";
-	desc: "Papertone is a simple, elegant note-taking app inspired by the golden era of iOS.";
-	link: "https://apps.apple.com/app/papertone/id6746156771";
+	category: "Productivity"
 	icon: "papertone.webp";
+	price: "$1.99"
+	platform: "ios"
+	link: "https://apps.apple.com/app/papertone/id6746156771";
 }
 app3 {
 	name: "SkeuoNotes";
-	dev: "Volkan Akgul";
-	desc: "A beautifully crafted note-taking app that brings the warmth of real stationery to your device.";
-	link: "https://apps.apple.com/app/skeuonotes/id6747936693";
+	category: "Productivity"
 	icon: "skeuonotes.webp";
+	price: "$1.99"
+	platform: "ios"
+	link: "https://apps.apple.com/app/skeuonotes/id6747936693";
 }
 app4 {
 	name: "SkeuoBooks";
-	dev: "Volkan Akgul";
-	desc: "The ePub Reader That Feels Like a Real Book";
-	link: "https://apps.apple.com/app/skeuobooks/id6752832389";
+	category: "Books"
 	icon: "skeuobooks.webp";
+	price: "$1.99"
+	platform: "ios"
+	link: "https://apps.apple.com/app/skeuobooks/id6752832389";
 }
