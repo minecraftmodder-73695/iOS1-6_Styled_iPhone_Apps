@@ -1,7 +1,7 @@
 app1 {
 	name: "Medley Music Player";
 	category: "Music"
-	icon: "medley.webp";
+	icon: "medley.png";
 	price: "$2.99"
 	platform: "ios"
 	link: "https://apps.apple.com/app/medley-music-player/id1643761346";
@@ -9,7 +9,7 @@ app1 {
 app2 {
 	name: "Papertone";
 	category: "Productivity"
-	icon: "papertone.webp";
+	icon: "papertone.png";
 	price: "$1.99"
 	platform: "ios"
 	link: "https://apps.apple.com/app/papertone/id6746156771";
@@ -17,7 +17,7 @@ app2 {
 app3 {
 	name: "SkeuoNotes";
 	category: "Productivity"
-	icon: "skeuonotes.webp";
+	icon: "skeuonotes.png";
 	price: "$1.99"
 	platform: "ios"
 	link: "https://apps.apple.com/app/skeuonotes/id6747936693";
@@ -25,7 +25,7 @@ app3 {
 app4 {
 	name: "SkeuoBooks";
 	category: "Books"
-	icon: "skeuobooks.webp";
+	icon: "skeuobooks.png";
 	price: "$1.99"
 	platform: "ios"
 	link: "https://apps.apple.com/app/skeuobooks/id6752832389";
