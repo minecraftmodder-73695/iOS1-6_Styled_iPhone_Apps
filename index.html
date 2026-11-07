@@ -1958,10 +1958,17 @@ function stars(rating) {
 }
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-function setIcon(holder, app, phClass) {
-  const ph = () => { holder.innerHTML = ''; holder.style.display = 'none'; };   // no placeholder tile
-  if (app.icon) { const img = new Image(); img.alt = ''; img.decoding = 'async'; img.onerror = ph; img.src = app.icon; holder.appendChild(img); }
-  else ph();
+const ICON_DIR = 'assets/';     // icons are looked up here first, then next to index.html
+function setIcon(holder, app) {
+  const hide = () => { holder.innerHTML = ''; holder.style.display = 'none'; };   // no placeholder tile
+  if (!app.icon) return hide();
+  const name = app.icon.replace(/^\.?\//, '');
+  const tries = /^(https?:|data:|assets\/)/i.test(name) ? [name] : [ICON_DIR + name, name];
+  const img = new Image(); img.alt = ''; img.decoding = 'async';
+  let i = 0;
+  img.onerror = () => { if (++i < tries.length) img.src = tries[i]; else hide(); };
+  img.src = tries[0];
+  holder.appendChild(img);
 }
 
 /* ---------- Top Charts list ---------- */
